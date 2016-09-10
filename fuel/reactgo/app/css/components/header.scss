@@ -1,0 +1,55 @@
+#header {
+    width: 100%;
+    height: 48px;
+    background: url(/img/backgrounds/top2.jpg) repeat-x 0 0;
+    display: block;
+    position: absolute;
+    z-index: 10000;
+    border-bottom: 1px solid #1c1c1c;
+
+    .wrapper {
+    	margin: 10px 22px 0;
+    }
+
+    .logo {
+    	float: left;
+    }
+	.topNav {
+		float: right;
+		position: relative;
+	}
+	.topSearch input[type=submit],
+	.userSearch input[type=submit] {
+		background: url(/img/sprites/sprite.png);
+	}
+
+	ul.userNav {
+		float: left;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			margin: 0 0 0 10px;
+			background: #262626;
+			border-radius: 50%;
+			box-shadow: 0 1px 0 #4e4e4e;
+
+			&:hover { background-color: #1aa1f7; }
+			&:active { background-color: #242424; }
+
+			a {
+				display: block;
+				height: 28px;
+				width: 28px;
+
+				&.screen { background: url(/img/icons/usernav/screen.png) no-repeat 9px 9px; }
+				&.settings { background: url(/img/icons/usernav/settings.png) no-repeat 9px 9px; }
+				&.profile { background: url(/img/icons/usernav/profile.png) no-repeat 9px 9px;  }
+				&.messages { background: url(/img/icons/usernav/messages.png) no-repeat 9px 10px;  }
+				&.logout { background: url(/img/icons/usernav/logout.png) no-repeat 9px 9px; }
+				&.search { background: url(/img/icons/usernav/search.png) no-repeat 9px 9px; }
+				&.sidebar { background: url(/img/icons/usernav/sidebar.png) no-repeat 9px 9px; }
+			}
+		}
+	}
+}

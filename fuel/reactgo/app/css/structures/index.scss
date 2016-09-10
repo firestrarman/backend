@@ -1,0 +1,25 @@
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+@import "components/header";
+@import "components/mainNav";
+@import "components/secNav";
+@import "components/contentTop";
+@import "components/contentTable";
+
+#sidebar {
+    display: block;
+    background: url("/img/backgrounds/side.jpg") repeat-y;
+    min-height: 100%;
+    position: absolute;
+    z-index: 999;
+    border-right: 1px solid #c3c3c3;
+}
+
+#content {
+    padding-bottom: 60px;
+    position: relative;
+    margin-left: 327px;
+    padding-top: 49px;
+}

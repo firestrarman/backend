@@ -1,0 +1,196 @@
+.buttonH,
+.buttonL,
+.buttonM,
+.buttonS,
+[class*="tablectrl"] {
+    font-size: 11px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 -1px #6f6f6f;
+    display: inline-block;
+    line-height: 14px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.buttonH span,
+.buttonL span,
+.buttonM span,
+.buttonS span {
+    text-shadow: 0 1px 0 #6f6f6f;
+    margin-left: 10px;
+}
+.buttonS {
+    padding: 6px 14px;
+}
+.buttonM {
+    padding: 7px 15px;
+}
+.buttonL {
+    padding: 8px 18px;
+}
+.buttonH {
+    float: right;
+    padding: 4px 12px;
+    color: #fff!important;
+    margin: 7px 10px 6px;
+}
+.bBlack:hover,
+.bBlue:hover,
+.bBrown:hover,
+.bGold:hover,
+.bGreen:hover,
+.bGreyish:hover,
+.bLightBlue:hover,
+.bRed:hover,
+.bSea:hover {
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+.bDefault,
+.dualBtn,
+.searchLine button {
+    border: 1px solid #c3c3c3;
+    box-shadow: inset 0 1px 2px #fff;
+    color: #686868;
+    text-shadow: none;
+    background: #f8f8f8;
+    background: linear-gradient(top, #f8f8f8 0%,#e8e8e8 100%);
+}
+.bDefault:hover,
+.dualBtn:hover,
+.searchLine button:hover {
+    transition: box-shadow 0.05s ease-in-out;
+    background: #fafafa;
+    background: linear-gradient(top, #fafafa 0%,#e5e5e5 100%);
+}
+.bDefault:active,
+.dualBtn:active,
+.searchLine button:active,
+.titleOpt > a:active,
+.titleToolbar > li > a:active {
+    background: #eee;
+    color: #505050;
+    border-color: #c0c0c0;
+    box-shadow: 0 0 5px #e2e2e2 inset, 0 1px 1px #fff;
+    text-shadow: 0 -1px 1px #f1f1f1;
+}
+.bDefault span {
+    text-shadow: none;
+}
+.bGreen {
+    border: 1px solid #68a341;
+    box-shadow: 0 1px 2px 0 #a4ca6c inset;
+    background: #96c161;
+    background: linear-gradient(top, #96c161 0%,#609c3d 100%);
+
+	&:active {
+	    background: #74aa49;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bRed {
+    border: 1px solid #a95151;
+    box-shadow: 0 1px 2px 0 #cd8787 inset;
+    background: #c57979;
+    background: linear-gradient(top, #c57979 0%,#a34c4c 100%);
+
+	&:hover {
+	    opacity: 0.95;
+	    filter: alpha(opacity=95);
+	    transition: opacity 0.2s ease-in-out;
+	}
+
+	&:active {
+	    background: #b15e5e;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bBlue {
+    border: 1px solid #3e76af;
+    box-shadow: 0 1px 2px 0 #66b2d2 inset;
+    -webkit-box-shadow: 0 1px 2px 0 #66b2d2 inset;
+    -moz-box-shadow: 0 1px 2px 0 #66b2d2 inset;
+    background: #5ba5cb;
+    background: linear-gradient(top, #5ba5cb 0%,#3a70ab 100%);
+
+	&:hover {
+	    opacity: 0.95;
+	    filter: alpha(opacity=95);
+	    transition: opacity 0.2s ease-in-out;
+	}
+
+	&:active {
+	    background: #4786b8;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bGreyish {
+    border: 1px solid #5e6779;
+    box-shadow: 0 1px 2px 0 #9ca6b3 inset;
+    background: #8c97a6;
+    background: linear-gradient(top, #8c97a6 0%,#596171 100%);
+
+	&:active {
+	    background: #6d7787;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bBlack {
+    border: 1px solid #4e4e4e;
+    box-shadow: 0 1px 2px 0 #959595 inset;
+    background: #838383;
+    background: linear-gradient(top, #838383 0%,#444444 100%);
+
+	&:active {
+	    background: #5d5d5d;
+	    box-shadow: 0 0 2px #505050 inset, 0 1px 0 #fff;
+	}
+}
+.bLightBlue {
+    border: 1px solid #5897c3;
+    box-shadow: 0 1px 2px 0 #84c4dd inset;
+    background: #6db5d5;
+    background: linear-gradient(top, #6db5d5 0%,#4a91c0 100%);
+
+	&:active {
+	    background: #559cc7;
+	    box-shadow: 0 0 2px #808080 inset, 0 1px 0 #fff;
+	}
+}
+.bGold {
+    border: 1px solid #c4853e;
+    box-shadow: 0 1px 2px 0 #ddb65b inset;
+    background: #d5a44c;
+    background: linear-gradient(top, #d5a44c 0%,#c07833 100%);
+
+	&:active {
+	    background: #ca8e40;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bSea {
+    border: 1px solid #5a837e;
+    box-shadow: 0 1px 2px 0 #95b8b6 inset;
+    background: #7ca6a3;
+    background: linear-gradient(top, #7ca6a3 0%,#547b76 100%);
+
+	&:active {
+	    background: #68918d;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}
+.bBrown {
+    border: 1px solid #9c6b3c;
+    box-shadow: 0 1px 2px 0 #c8a85f inset;
+    background: #bb934f;
+    background: linear-gradient(top, #bb934f 0%,#996336 100%);
+
+	&:active {
+	    background: #ad7f45;
+	    box-shadow: 0 0 2px #707070 inset, 0 1px 0 #fff;
+	}
+}

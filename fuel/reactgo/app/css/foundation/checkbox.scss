@@ -1,0 +1,33 @@
+div.checker {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    display: -moz-inline-box;
+    display: block;
+    vertical-align: middle;
+    zoom: 1;
+    float: left;
+    margin-top: 3px;
+    margin-right: 8px;
+    box-shadow: 0 1px 0 #fff;
+
+	input {
+	    width: 16px;
+	    height: 16px;
+	    opacity: 0;
+	    display: inline-block;
+	    background: none;
+	}
+
+	span {
+	    background: url(/img/elements/forms/checkboxes.png) no-repeat 0 0;
+	    height: 16px;
+	    width: 16px;
+	    display: inline-block;
+	    text-align: center;
+
+		&.checked {
+		    background-position: 0 -17px;
+		}
+	}
+}

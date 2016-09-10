@@ -1,0 +1,96 @@
+.mainNav {
+    width: 100px;
+    background: url("/img/backgrounds/sidebar.jpg");
+    float: left;
+    padding-top: 15px;
+    position: relative;
+    z-index: 99;
+    padding-top: 49px;
+
+    .user {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        padding-top: 16px;
+        border-top: 1px solid #545454;
+
+        a {
+            position: relative;
+            display: inline-block;
+            /*width: 80px; margin: 0 auto;*/
+
+            img {
+                box-shadow: 0 1px 3px #1e1e1e;
+            }
+        }
+
+        span {
+            display: block;
+            color: #c2c2c2;
+            margin-top: 10px;
+        }
+    }
+
+    .nav {
+        text-align: center;
+        border-top: 1px solid #2e2e2e;
+        margin-top: 10px;
+        border-bottom: 1px solid #555555;
+
+        li {
+            border-top: 1px solid #555555;
+            border-bottom: 1px solid #2e2e2e;
+            position: relative;
+
+            a {
+                display: block;
+                padding: 14px 0 8px;
+                color: #bababa;
+                font-size: 11px;
+                width: 100px;
+                background: linear-gradient(top, rgba(86,86,86,0.2) 0%, rgba(54,54,54,0.2) 100%);
+
+                span {
+                    display: block;
+                    padding-top: 4px;
+                    text-shadow: 0 1px 0 #303030;
+                }
+
+                img {
+                    opacity: 0.5;
+                }
+
+                &.active {
+                    color: #f4f4f4;
+
+                    img {
+                        opacity: 1;
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    background: linear-gradient(top, rgba(86,86,86,0.2) 0%, rgba(86,86,86,0.1) 100%);
+
+                    img {
+                        opacity: 1;
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                }
+
+                &.active,
+                &:active {
+                    background: linear-gradient(top, rgba(120,120,120,0.2) 0%, rgba(120,120,120,0.3) 100%);
+                }
+            }
+        }
+    }
+}
+
+.nav > li > a:hover {
+    color: #f4f4f4;
+    transition: all 0.3s ease-in-out;
+}
+.nav li:hover ul {
+    display: block;
+}
