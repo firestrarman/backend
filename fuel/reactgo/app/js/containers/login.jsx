@@ -1,23 +1,33 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 import Header from 'js/components/header';
 import LoginWrapper from 'js/components/loginWrapper';
+import { getUser } from '../redux/modules/user';
 
 export class Login extends Component {
     static propTypes = {
-        user: PropTypes.array.isRequired
+        user: PropTypes.object.isRequired
     }
+
     componentDidMount() {
-        const { dispatch } = this.props;
+
     }
+
     render() {
-        const {dispatch, user} = this.props;
+        const {user} = this.props;
         return (
             <div className="main-wrap">
                 <Header user={user} />
-                <LoginWrapper dispatch={dispatch}/>
+                <LoginWrapper
+                    loginEvent={this.loginEvent}
+                    user={user}/>
             </div>
         );
+    }
+
+    loginEvent = (data) => {
+        const { dispatch } = this.props;
+        dispatch(getUser(data));
     }
 }
 

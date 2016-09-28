@@ -55,7 +55,11 @@
     "browser-sync": "2.11.1",
     "browser-sync-spa": "1.0.3",
     "bs-html-injector": "3.0.0",
-    "history": "2.1.2"
+    "history": "2.1.2",
+    "mockjs": "^1.0.1-beta3",
+    "express": "^4.14.0",
+    "body-parser": "^1.15.2",
+    "react-quill": "^0.4.1"
   },
   "scripts": {
     "build": "NODE_ENV=development node server.js",

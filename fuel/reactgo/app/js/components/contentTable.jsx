@@ -1,30 +1,64 @@
 import React, {Component} from 'react';
 import {Select, Switch, Icon, Pagination} from 'antd';
+import QueueAnim from 'rc-queue-anim';
+import { hashHistory } from 'react-router';
 
 export default class ContentTable extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            dropdownShow: false,
+            optionShow: false,
+            searchShow: false
+        };
+    }
+
+    dropMenuShowEvent = () => {
+        this.setState({
+            dropdownShow: !this.state.dropdownShow
+        });
+    }
+
+    optionShowEvent = () => {
+        this.setState({
+            optionShow: !this.state.optionShow
+        });
+    }
+
+    searchShowEvent = () => {
+        this.setState({
+            searchShow: !this.state.searchShow
+        });
+    }
+
+    editEvent = () => {
+        hashHistory.push('/main/detail');
     }
 
     render() {
+        const dropMenuStyle = {
+            display: this.state.dropdownShow ? 'block' : 'none'
+        };
+        const optionStyle = {
+            display: this.state.optionShow ? 'block' : 'none'
+        };
+        const searchShowEvent = {
+            display: this.state.searchShow ? 'block' : 'none'
+        };
+        const searchClass =  this.state.searchShow ? 'tOptions tipS act' : 'tOptions tipS';
+
         return (
             <div className="wrapper">
                 <div className="btn-group">
-                    <a className="buttonM bDefault" data-toggle="dropdown" href="#">
+                    <a className="buttonM bDefault" href="javascript:void(0);" onClick={this.dropMenuShowEvent}>
                         <span className="icos-pencil"></span>
                         <span>資料管理</span>
                         <span className="caret"></span>
                     </a>
-                    <ul className="dropdown-menu">
-                        <li>
-                            <a href="#">
-                                <span className="icos-add"></span>建立資料</a>
-                        </li>
-                        <li>
-                            <a href="#" className="">
-                                <span className="icos-trash"></span>刪除資料</a>
-                        </li>
+                    <ul className="dropdown-menu" style={dropMenuStyle}>
+                        <li><a href="#"><span className="icos-add"></span>建立資料</a></li>
+                        <li><a href="#" className=""><span className="icos-trash"></span>刪除資料</a></li>
                     </ul>
                 </div>
                 <div className="widget">
@@ -37,9 +71,9 @@ export default class ContentTable extends Component {
                         <h6>新聞資訊列表</h6>
                     </div>
                     <div id="dyn" className="hiddenpars">
-                        <a className="tOptions tipS act"><img src="/img/icons/options.png" alt=""/></a>
+                        <a className={searchClass} onClick={this.searchShowEvent}><img src="/img/icons/options.png" alt=""/></a>
                         <div id="checkAll_wrapper" className="dataTables_wrapper" role="grid">
-                            <div className="tablePars">
+                            <div className="tablePars" style={searchShowEvent}>
                                 <div className="dataTables_filter" id="checkAll_filter">
                                     <label>Search:
                                         <input type="text" aria-controls="checkAll"/></label>
@@ -47,9 +81,7 @@ export default class ContentTable extends Component {
                                 <div id="checkAll_length" className="dataTables_length">
                                     <label>
                                         <span className="showentries">Show entries:</span>
-                                        <Select defaultValue="10" style={{
-                                            width: 70
-                                        }}>
+                                        <Select defaultValue="10" style={{width: 70}}>
                                             <Option value="10">10</Option>
                                             <Option value="25">25</Option>
                                             <Option value="50">50</Option>
@@ -112,12 +144,12 @@ export default class ContentTable extends Component {
                                         </td>
                                         <td className="tableActs">
                                             <div className="btn-group">
-                                                <a href="#" className="tablectrl_small bDefault tipS" title="Option" data-toggle="dropdown">
+                                                <a href="javascript:void(0);" onClick={this.optionShowEvent} className="tablectrl_small bDefault tipS" title="Option" data-toggle="dropdown">
                                                     <span className="iconb" data-icon=""></span>
                                                 </a>
-                                                <ul className="dropdown-menu pull-right">
+                                                <ul className="dropdown-menu pull-right" style={optionStyle}>
                                                     <li>
-                                                        <a href="#" className="">
+                                                        <a href="javascript:void(0);" onClick={this.editEvent}>
                                                             <span className="icos-create2"></span>編輯資料</a>
                                                     </li>
                                                     <li>

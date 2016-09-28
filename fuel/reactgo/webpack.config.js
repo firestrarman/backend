@@ -36,6 +36,7 @@ var config = {
     },
     devtool: __DEVELOPMENT__ ? 'source-map' : false,
     module: {
+        noParse: /node_modules\/quill\/dist/,
         loaders: [
             {
                 test: /\.css$/,
