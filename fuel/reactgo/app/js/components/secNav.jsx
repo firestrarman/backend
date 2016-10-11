@@ -1,28 +1,62 @@
 import React, {Component} from 'react';
 import QueueAnim from 'rc-queue-anim';
+import _ from 'lodash';
 
 export default class SecNav extends Component {
     constructor(props) {
         super(props);
 
+        const {user} = this.props;
+
+        const showData = {};
+        _.forEach(user.sub_category, (val) => {
+            if (val.list.length) {
+                showData[val.list] = false;
+            }
+        });
+
         this.state = {
-            show: true
+            show: showData
         };
     }
 
-    clickEvent = () => {
+    clickEvent = (key) => {
+        const showData = this.state.show;
+        showData[key] = !showData[key];
+
         this.setState({
-            show: !this.state.show
+            show: showData
         });
     }
 
     render() {
-        const list = this.state.show ? [
-            <li key="1"><a href="cms_news.html" title="">新聞資訊管理</a></li>,
-            <li key="2"><a href="cms_newscategory.html" title="">新聞類別管理</a></li>,
-            <li key="3"><a href="cms_newsalbum.html" title="">相片簿管理</a></li>,
-            <li key="4"><a href="cms_newsmedia.html" title="" className="noBorderB">媒體管理</a></li>
-        ] : null;
+        const {user} = this.props;
+
+        const data = [];
+        _.forEach(user.sub_category, (item) => {
+            if (!item.list.length) {
+                data.push(<li className="activeli" key={item.id}>
+                    <a href="cms.html" title="" className="this">
+                        <span className={item.img}></span>{item.name}
+                    </a>
+                </li>);
+            } else {
+                const list = [];
+                if (this.state.show[item.id]) {
+                    _.forEach(item.list, (val, key) => {
+                        list.push(
+                            <li key={val.id}><a href="cms_news.html" title="">{val.name}</a></li>
+                        )
+                    });
+                }
+                data.push(<li key={item.id}>
+                    <a href="javascript:void(0);" onClick={() => this.clickEvent(item.id)} title=""><span className={item.img}></span>{item.name}</a>
+                    <QueueAnim component="ul"  className="demo-content" type={['right', 'left']} interval={0} duration={200}>
+                        {list}
+                    </QueueAnim>
+                </li>);
+            }
+        });
 
         return (
             <div className="secNav">
@@ -47,20 +81,11 @@ export default class SecNav extends Component {
                     </ul>
                     <div className="divider"><span></span></div>
                     <div className="subNav">
-                        <li className="activeli">
-                            <a href="cms.html" title="" className="this">
-                                <span className="icos-star"></span>CMS 資訊總覽
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" onClick={this.clickEvent} title=""><span className="icos-map"></span>新聞與活動管理</a>
-                            <QueueAnim component="ul"  className="demo-content" type={['right', 'left']} interval={0} duration={200}>
-                                {list}
-                            </QueueAnim>
-                        </li>
+                        {data}
                     </div>
                 </div>
             </div>
         );
     }
 }
+//

@@ -92,7 +92,7 @@ export class LoginWrapper extends Component {
                       <Input
                           {...emailProps}
                           className="loginEmail"
-                          type="email"
+                          type="text"
                           placeholder="Confirm your email" />
                     </FormItem>
                     <FormItem hasFeedback>
